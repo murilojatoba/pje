@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  pje-bd:
+    build:
+      context: .
+    container_name: pje-bd
+    ports:
+      - '5434:5434'
+    environment:
+      - POSTGRES_PASSWORD=123456
+      - PGDATA=/usr/local/pje/PostgreSQL/13/data
+      - PGPORT=5434
+    volumes:
+      - /usr/local/pje:/usr/local/pje
+      - /home/murilo/Downloads:/mnt/Downloads
